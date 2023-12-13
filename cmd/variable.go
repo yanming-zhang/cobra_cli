@@ -43,7 +43,7 @@ var envCmd = &cobra.Command{
 		}
 		fmt.Println(output)
 
-		c, err := ini.Load("./optimism/.envrc")
+		c, err := ini.Load("/data/optimism/.envrc")
 		if err != nil {
 			fmt.Printf("Fail to read file: %v", err)
 			os.Exit(1)
@@ -78,7 +78,7 @@ var envCmd = &cobra.Command{
 		kind := lc.Section("L1_RPC").Key("KIND").String()
 		c.Section("").Key("export L1_RPC_KIND").SetValue(kind)
 
-		c.SaveTo("./optimism/.envrc")
+		c.SaveTo("/data/optimism/.envrc")
 		_ = shell.ExecuteShellStdout([]string{"scripts/effect_env_variables.sh"})
 	},
 }

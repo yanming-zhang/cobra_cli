@@ -31,17 +31,17 @@ var dependCmd = &cobra.Command{
 	Short: "安装依赖包",
 	Long:  dependDesc,
 	Run: func(cmd *cobra.Command, args []string) {
-		_, err := gitClient.Clone("develop", "./optimism", "https://github.com/ethereum-optimism/optimism")
+		_, err := gitClient.Clone("develop", "/data/optimism", "https://github.com/ethereum-optimism/optimism")
 		if err != nil {
 			fmt.Sprintf("error: %s", err)
 			os.Exit(1)
 		}
-		_, err = gitClient.Clone("optimism", "./op-geth", "https://github.com/ethereum-optimism/op-geth")
+		_, err = gitClient.Clone("optimism", "/data/op-geth", "https://github.com/ethereum-optimism/op-geth")
 		if err != nil {
 			fmt.Sprintf("error: %s", err)
 			os.Exit(1)
 		}
-		output, _ := shell.ExecuteShell([]string{"optimism/packages/contracts-bedrock/scripts/getting-started/versions.sh"})
+		output, _ := shell.ExecuteShell([]string{"/data/optimism/packages/contracts-bedrock/scripts/getting-started/versions.sh"})
 		if strings.Contains(output, "No version found") {
 			_ = shell.ExecuteShellStdout([]string{"scripts/install_dependency_pkgs.sh"})
 		}

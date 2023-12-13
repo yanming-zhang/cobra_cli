@@ -1,9 +1,7 @@
 #!/bin/bash
 
-basepath=`pwd`
-
 ## Load Environment variables
-cd $basepath/optimism
+cd /data/optimism
 direnv allow
 
 ## configure network
