@@ -1,6 +1,6 @@
 #!/bin/bash
 
-## 安全依赖包
+## 安装依赖包
 ./cobra_cli depend
 
 ## 编译程序包
