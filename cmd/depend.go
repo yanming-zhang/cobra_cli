@@ -12,14 +12,14 @@ import (
 
 var dependDesc = strings.Join([]string{
 	"目前所需要安装的依赖包如下：",
-	"1) git 		版本：^2",
-	"2) go  		版本：^1.21",
-	"3) node 		版本：^20",
-	"4) pnpm 		版本：^8",
+	"1) git 	版本：^2",
+	"2) go  	版本：^1.21",
+	"3) node 	版本：^20",
+	"4) pnpm 	版本：^8",
 	"5) foundry 	版本：^0.2.0",
-	"6) make 		版本：^4",
-	"7) jq			版本：^1.6",
-	"8) direnv		版本：^2",
+	"6) make 	版本：^4",
+	"7) jq		版本：^1.6",
+	"8) direnv	版本：^2",
 }, "\n")
 
 func init() {
